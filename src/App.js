@@ -1,3 +1,4 @@
+import "../styles/App.css";
 import List from "../pages/List";
 import Details from "../pages/Details";
 import AddInfo from "../pages/AddInfo";
