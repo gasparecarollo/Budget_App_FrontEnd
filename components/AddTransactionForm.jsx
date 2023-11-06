@@ -5,16 +5,17 @@ import "../styles/add-transaction-form.css";
 function AddTransactionForm() {
 
 
-    const [transaction, setTransaction] = useState({ date: "", item_name: "", category: "", amount: "", from: "" });
+    // const [transaction, setTransaction] = useState({ date: "", item_name: "", category: "", amount: "", from: "" });
+
+    const [transaction, setTransaction] = useState({});
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    }
+    };
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
         setTransaction(event.target.value);
-    }
+    };
 
     return (
         <div className="add-transaction-container">
@@ -22,11 +23,11 @@ function AddTransactionForm() {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label className="form-label">Date:</label>
-                    <input name={"Date"} type="text" value={Date} className="form-input" />
+                    <input name={"Date"} type="text" value={Date} onChange={handleChange} className="form-input" placeholder="date" />
                 </div>
                 <div className="form-group">
                     <label className="form-label"> Category:</label>
-                    <input name={"Category"} type="text" value={Category} className="form-input" />
+                    <input name={"Category"} type="text" value={item_name} onChange={handleChange} className="form-input" placeholder="category" />
                 </div>
                 <div className="form-group">
                     <label className="form-label"> Amount:</label>
@@ -35,7 +36,7 @@ function AddTransactionForm() {
                 </div>
                 <div className="form-group">
                     <label className="form-label"> From:</label>
-                    <input name={"From"} value={From} type="text" className="form-input" />
+                    <input name={"From"} value={From} type="text" onChange={handleChange} className="form-input" placeholder="From" />
                 </div>
                 <button type="submit" className="submit-button"> Submit</button>
             </form>
